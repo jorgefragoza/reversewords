@@ -16,10 +16,6 @@ class Ejercicio13 {
 
             return respuesta
         }
-
-        const isComplete = function(beginWord, endWord) {
-            return beginWord === endWord ? true : false
-        }
         
         const isCandidate = function(beginWord, word) {
             let differences = 0
@@ -53,7 +49,7 @@ class Ejercicio13 {
                 candidates.map(c => {
                     if(p.slice(-1)[0] !== endWord) {
                         if(first) {
-                            if(!p.find(e => e === c)) {
+                            if(!exists(c,p)) {
                                 p.push(c)
                                 first = !first
                                 flag = true
